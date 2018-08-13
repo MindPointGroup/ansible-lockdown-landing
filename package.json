@@ -1,0 +1,64 @@
+{
+  "name": "ansible-lockdown-landing",
+  "version": "0.0.1",
+  "description": "Landing Page for Ansible Lockdown",
+  "main": "./src/index.js",
+  "sideEffects": [
+    "*.css",
+    "*.scss"
+  ],
+  "scripts": {
+    "build": "webpack --mode production",
+    "build-c": "components --js ./dist --css ./dist",
+    "watch": "webpack --mode development --watch",
+    "start": "nodemon --watch webpack.config.js --exec \"webpack-dev-server --mode development\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MindPointGroup/ansible-lockdown-landing.git"
+  },
+  "keywords": [
+    "landing-pages"
+  ],
+  "author": "Jonathan Davila",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MindPointGroup/ansible-lockdown-landing/issues"
+  },
+  "homepage": "https://github.com/MindPointGroup/ansible-lockdown-landing#readme",
+  "devDependencies": {
+    "@fortawesome/fontawesome-pro": "^5.2.0",
+    "autoprefixer": "^9.1.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-syntax-object-rest-spread": "^6.13.0",
+    "babel-plugin-transform-es2015-classes": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-stage-3": "^6.24.1",
+    "bulma": "^0.7.1",
+    "components": "github:hxoht/components",
+    "compression-webpack-plugin": "^1.1.11",
+    "css-loader": "^1.0.0",
+    "debug": "^3.1.0",
+    "domready": "^1.0.8",
+    "h": "github:voltraco/h",
+    "he": "^1.1.1",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.1",
+    "node-sass": "^4.9.2",
+    "nodemon": "^1.18.3",
+    "postcss-loader": "^2.1.6",
+    "qs": "github:hxoht/qs",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.21.0",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack": "^4.16.4",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.5"
+  },
+  "dependencies": {
+    "tonic": "github:hxoht/tonic"
+  }
+}
