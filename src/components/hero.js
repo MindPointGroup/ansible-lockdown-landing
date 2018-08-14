@@ -41,7 +41,7 @@ class Hero extends Tonic {
               Community
             </a>
             <a class="navbar-item">
-              Support
+              Professional Services
             </a>
           </div>
         </div>

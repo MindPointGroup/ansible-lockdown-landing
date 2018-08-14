@@ -1,45 +1,18 @@
 const Tonic = require('tonic')
 const domReady = require('domReady')
 const { qs, qsa } = require('qs')
+const roles = require('./fixtures/roles.js')
+const authors = require('./fixtures/maintainers.js')
 
+require('highlightjs')
 require('./components/hero')
 require('./components/about')
 require('./components/roles')
+require('./components/demo-interface')
+require('./components/authors')
+require('./components/community')
 
 require('./main.scss')
-
-const roles = [
-  {
-    name: 'RedHat Enterprise Linux 7 STIG',
-    repoLink: 'https://github.com/MindPointGroup/RHEL7-STIG',
-    tags: ['stig', 'hardening', 'linux', 'rhel']
-  },
-  {
-    name: 'RedHat Enterprise Linux 7 CIS',
-    repoLink: 'https://github.com/MindPointGroup/RHEL7-CIS',
-    tags: ['cis', 'hardening', 'linux', 'rhel']
-  },
-  {
-    name: 'RedHat Enterprise Linux 6 STIG',
-    repoLink: 'https://github.com/MindPointGroup/RHEL6-STIG',
-    tags: ['stig', 'hardening', 'linux', 'rhel']
-  },
-  {
-    name: 'Microsoft Windows Server 2008R2 Member Server',
-    repoLink: 'https://github.com/MindPointGroup/Windows-2008R2-Member-Server-STIG',
-    tags: ['stig', 'hardening', '2008R2', 'windows']
-  },
-  {
-    name: 'Microsoft Windows Server 2012 Member Server',
-    repoLink: 'https://github.com/MindPointGroup/Windows-2012-Member-Server-STIG',
-    tags: ['stig', 'hardening', '2012', 'windows']
-  },
-  {
-    name: 'Microsoft Windows Server 2012 Domain Controller',
-    repoLink: 'https://github.com/MindPointGroup/Windows-2012-Domain-Controller-STIG',
-    tags: ['stig', 'hardening', '2012', 'windows']
-  }
-]
 
 class App extends Tonic {
   render () {
@@ -51,6 +24,9 @@ class App extends Tonic {
 
     <about></about>
     <roles data='${JSON.stringify(roles)}'></roles>
+    <demo-interface></demo-interface>
+    <community></community>
+    <authors data='${JSON.stringify(authors)}'></authors>
 `
   }
 }

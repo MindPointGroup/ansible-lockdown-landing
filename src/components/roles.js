@@ -41,7 +41,7 @@ class Roles extends Tonic {
           These are the roles we currently maintain.
         </h3>
 
-        <div class="columns is-multiline is-mobile">
+        <div class="columns is-multiline">
           ${repoCards}
         </div>
 
