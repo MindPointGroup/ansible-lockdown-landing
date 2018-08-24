@@ -1,7 +1,9 @@
 const Tonic = require('tonic')
+const debug = require('debug')('roles')
 
 class Roles extends Tonic {
   render () {
+    debug('rendering')
     let repoCards = ''
     for (const role of this.props.data) {
       repoCards += `

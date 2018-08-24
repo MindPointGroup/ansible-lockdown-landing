@@ -3,6 +3,7 @@ const domReady = require('domReady')
 const { qs, qsa } = require('qs')
 const roles = require('./fixtures/roles.js')
 const authors = require('./fixtures/maintainers.js')
+const debug = require('debug')('index')
 
 require('highlightjs')
 require('./components/hero')
@@ -26,7 +27,7 @@ class App extends Tonic {
     <roles data='${JSON.stringify(roles)}'></roles>
     <demo-interface></demo-interface>
     <community></community>
-    <authors data='${JSON.stringify(authors)}'></authors>
+    <authors data={${JSON.stringify(authors)}}></authors>
 `
   }
 }
@@ -38,7 +39,6 @@ const navbarEventInit = () => {
       el.addEventListener('click', () => {
         const target = el.dataset.target
         const $target = qs(`#${target}`)
-        console.log($target)
         el.classList.toggle('is-active')
         $target.classList.toggle('is-active')
       })

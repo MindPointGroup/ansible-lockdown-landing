@@ -1,8 +1,10 @@
 const Tonic = require('tonic')
+const debug = require('debug')('authors')
 
 class Author extends Tonic {
   render () {
-    console.log(this.props.data)
+    debug('render authors')
+    debug(this.props)
     return `
     <div class="column">
       <div class="card">
