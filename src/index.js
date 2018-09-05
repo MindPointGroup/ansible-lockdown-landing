@@ -1,8 +1,8 @@
 const Tonic = require('tonic')
 const domReady = require('domReady')
 const { qs, qsa } = require('qs')
-const roles = require('./fixtures/roles.js')
-const authors = require('./fixtures/maintainers.js')
+const roles = require('./fixtures/roles')
+const authors = require('./fixtures/maintainers')
 const debug = require('debug')('index')
 
 require('highlightjs')
@@ -17,6 +17,7 @@ require('./main.scss')
 
 class App extends Tonic {
   render () {
+    debug('render')
     const brandTitle = 'Ansible Lockdown'
     const heroTitle = 'Security Through Automation'
     const heroSubtitle = 'Ansible Roles That Secure Your Systems'

@@ -3,8 +3,9 @@ const debug = require('debug')('authors')
 
 class Author extends Tonic {
   render () {
-    debug(this.props.data)
-    return `
+    debug('author')
+    debug(this.props)
+    return this.html`
     <div class="column">
       <div class="card">
         <div class="card-image">
@@ -57,12 +58,17 @@ class Authors extends Tonic {
   render () {
     let authorCards = ''
     for (const person of this.props.data) {
+      debug('person')
+      debug(person) // this shows the proper object
       authorCards += `
-        <author data='${JSON.stringify(person)}'></author> 
+        <author data=${person}'></author>
       `
     }
 
-    return `
+    // i think the error happens here when I try to use
+    // a string template var as 'normal' and not as a way
+    // to pass in prop data
+    return this.html`
     <div class='section'>
       <div class='container'>
         <nav class='level'>
@@ -71,7 +77,7 @@ class Authors extends Tonic {
           </span>
         </nav>
         <div class="columns is-centered">
-          ${authorCards}
+        ${authorCards}
         </div>
       </div>
     </div>
