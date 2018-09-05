@@ -3,7 +3,7 @@ const debug = require('debug')('roles')
 
 class Roles extends Tonic {
   render () {
-    debug('rendering')
+    debug(this.props.data)
     let repoCards = ''
     for (const role of this.props.data) {
       repoCards += `

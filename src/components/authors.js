@@ -3,8 +3,7 @@ const debug = require('debug')('authors')
 
 class Author extends Tonic {
   render () {
-    debug('render authors')
-    debug(this.props)
+    debug(this.props.data)
     return `
     <div class="column">
       <div class="card">

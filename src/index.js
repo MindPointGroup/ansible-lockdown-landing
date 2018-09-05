@@ -20,14 +20,14 @@ class App extends Tonic {
     const brandTitle = 'Ansible Lockdown'
     const heroTitle = 'Security Through Automation'
     const heroSubtitle = 'Ansible Roles That Secure Your Systems'
-    return `
+    return this.html`
     <hero title="${heroTitle}" brandTitle="${brandTitle}" subtitle="${heroSubtitle}"></hero>
 
     <about></about>
-    <roles data='${JSON.stringify(roles)}'></roles>
+    <roles data=${roles}></roles>
     <demo-interface></demo-interface>
     <community></community>
-    <authors data={${JSON.stringify(authors)}}></authors>
+    <authors data=${authors}></authors>
 `
   }
 }
