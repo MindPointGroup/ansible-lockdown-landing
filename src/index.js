@@ -41,7 +41,8 @@ class App extends Tonic {
   }
 
   click (el) {
-    if (el.target.id === 'scrollup') {
+    debug(el)
+    if (el.target.id === 'scrollup' || el.target.closest('#scrollup')) {
       scrollToY(window, 0, 200)
     }
   }
