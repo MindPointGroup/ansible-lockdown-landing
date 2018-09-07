@@ -1,4 +1,5 @@
 const Tonic = require('tonic')
+const { qsa } = require('qs')
 const debug = require('debug')('hero')
 const scrollToY = require('scrolltoy')
 
@@ -41,7 +42,7 @@ TxtRotate.prototype.tick = function () {
 }
 
 window.onload = () => {
-  const elements = document.getElementsByClassName('txt-rotate')
+  const elements = qsa('.txt-rotate')
   for (let i = 0; i < elements.length; i++) {
     const toRotate = elements[i].getAttribute('data-rotate')
     const period = elements[i].getAttribute('data-period')

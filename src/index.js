@@ -18,9 +18,9 @@ require('./main.scss')
 
 function scrollFunction () {
   if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
-    document.getElementById('scrollup').style.display = 'block'
+    qs('#scrollup').style.display = 'block'
   } else {
-    document.getElementById('scrollup').style.display = 'none'
+    qs('#scrollup').style.display = 'none'
   }
 }
 
