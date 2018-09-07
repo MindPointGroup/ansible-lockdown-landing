@@ -3,6 +3,7 @@ const domReady = require('domReady')
 const { qs, qsa } = require('qs')
 const roles = require('./fixtures/roles')
 const debug = require('debug')('index')
+const scrollToY = require('scrolltoy')
 
 require('highlightjs')
 require('./components/hero')
@@ -15,8 +16,15 @@ require('./components/fuuter')
 
 require('./main.scss')
 
-class App extends Tonic {
+function scrollFunction () {
+  if (document.body.scrollTop > 60 || document.documentElement.scrollTop > 60) {
+    document.getElementById('scrollup').style.display = 'block'
+  } else {
+    document.getElementById('scrollup').style.display = 'none'
+  }
+}
 
+class App extends Tonic {
   stylesheet () {
     return `
     #scrollup {
@@ -24,10 +32,18 @@ class App extends Tonic {
       bottom: 20px;
       right: 30px;
       z-index: 99;
+      background: transparent;
+      border: none;
       cursor: pointer;
-      padding: 15px;
+      display: none;
     }
     `
+  }
+
+  click (el) {
+    if (el.target.id === 'scrollup') {
+      scrollToY(window, 0, 200)
+    }
   }
 
   render () {
@@ -52,7 +68,7 @@ class App extends Tonic {
     <community></community>
     <services></services>
     <fuuter></fuuter>
-    <a id="scrollup" class="button is-black">Anchor</a>
+    <button id="scrollup" class="button"><i class="fas fa-arrow-alt-square-up fa-3x"></i></button>
 `
   }
 }
@@ -71,6 +87,7 @@ const navbarEventInit = () => {
   }
 }
 
+window.onscroll = function () { scrollFunction() }
 domReady(() => {
   Tonic.add(App)
   navbarEventInit()

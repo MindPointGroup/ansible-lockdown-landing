@@ -62,7 +62,7 @@ class Hero extends Tonic {
       hero #project-title {
         font-family: 'Cutive Mono';
         font-weight: 'bolder';
-      } 
+      }
     `
   }
 
@@ -80,11 +80,14 @@ class Hero extends Tonic {
     el.preventDefault()
     if (el.target.className === 'navbar-item') {
       const anchor = el.target.innerText.toLowerCase().replace(' ', '-')
-      debug(anchor)
       const element = document.getElementById(anchor)
       const yPos = this.getY(element)
-      debug(yPos)
-      scrollToY(window, yPos, 100)
+      scrollToY(window, yPos, 200)
+    }
+
+    if (el.target.id === 'down-arrow' || el.target.closest('#down-arrow')) {
+      const element = document.getElementById('about')
+      scrollToY(window, this.getY(element), 200)
     }
   }
 
@@ -167,7 +170,7 @@ class Hero extends Tonic {
       <nav class="level">
         <div class="level-item">
           <span class="icon">
-            <a href='#about'>
+            <a id='down-arrow'>
               <span class="fa-stack fa-2x">
                   <i data-fa-transform="up-7" class="fal fa-circle fa-stack-2x"></i>
                   <i data-fa-transform="up-14" class="fas fa-chevron-double-down fa-stack-1x"></i>
