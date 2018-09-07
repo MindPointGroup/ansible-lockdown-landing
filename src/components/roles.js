@@ -28,7 +28,7 @@ class Roles extends Tonic {
       `
     }
     return `
-    <section class='has-background-primary section'>
+    <section id='roles' class='has-background-primary section'>
       <div class='container'>
 
         <nav class='level'>

@@ -15,9 +15,9 @@ class About extends Tonic {
             <div>
               <span class='has-text-centered'>
                 <p>Ansible Lockdown is an open source project with one principal focus; to make it easy for anyone to <strong>conduct security operations in a way that is safe, maintainable, and automated.</strong></p>
-                </br>
+                <br>
                 <p>Speaking in literal terms, it is a curated collection of information security themed Ansible roles that are both vetted and actively maintained.</p>
-                </br>
+                <br>
                 <p>The project is backed by a collaborative effort between RedHat and MindPoint Group</p>
               </span>
             </div>

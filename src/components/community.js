@@ -3,7 +3,7 @@ const Tonic = require('tonic')
 class Community extends Tonic {
   render () {
     return `
-    <section class='has-background-primary section'>
+    <section id='community' class='has-background-primary section'>
       <div class='container'>
         <nav class='level'>
           <span class='level-item'>

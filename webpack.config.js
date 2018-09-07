@@ -12,7 +12,7 @@ const entry = [
 
 const output = {
   filename: 'bundle.js',
-  path: `${__dirname}/dist/`
+  path: `${__dirname}/docs/`
 }
 
 const plugins = [
@@ -84,13 +84,18 @@ const rules = [
         loader: 'sass-loader'
       }
     ]
+  },
+  {
+    test: /\.(png|jpg|gif)$/,
+    use: [{
+      loader: 'file-loader'
+    }]
   }
 ]
 
 const devServer = {
   overlay: true,
-  open: true,
-  stats: 'errors-only'
+  open: true
 }
 
 module.exports = {

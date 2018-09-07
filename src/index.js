@@ -2,7 +2,6 @@ const Tonic = require('tonic')
 const domReady = require('domReady')
 const { qs, qsa } = require('qs')
 const roles = require('./fixtures/roles')
-const authors = require('./fixtures/maintainers')
 const debug = require('debug')('index')
 
 require('highlightjs')
@@ -10,25 +9,50 @@ require('./components/hero')
 require('./components/about')
 require('./components/roles')
 require('./components/demo-interface')
-require('./components/authors')
 require('./components/community')
+require('./components/services')
+require('./components/fuuter')
 
 require('./main.scss')
 
 class App extends Tonic {
+
+  stylesheet () {
+    return `
+    #scrollup {
+      position: fixed;
+      bottom: 20px;
+      right: 30px;
+      z-index: 99;
+      cursor: pointer;
+      padding: 15px;
+    }
+    `
+  }
+
   render () {
     debug('render')
     const brandTitle = 'Ansible Lockdown'
     const heroTitle = 'Security Through Automation'
-    const heroSubtitle = 'Ansible Roles That Secure Your Systems'
+    const heroSubtitle = 'Ansible Roles That Secure Your'
+    const heroSwapList = [
+      'Systems',
+      'Servers',
+      'Cloud',
+      'Network',
+      'Desktops',
+      'Middleware'
+    ]
     return this.html`
-    <hero title="${heroTitle}" brandTitle="${brandTitle}" subtitle="${heroSubtitle}"></hero>
+    <hero title="${heroTitle}" brandTitle="${brandTitle}" subtitle="${heroSubtitle}" swapList=${JSON.stringify(heroSwapList)}></hero>
 
     <about></about>
     <roles data=${roles}></roles>
     <demo-interface></demo-interface>
     <community></community>
-    <authors data=${authors}></authors>
+    <services></services>
+    <fuuter></fuuter>
+    <a id="scrollup" class="button is-black">Anchor</a>
 `
   }
 }
