@@ -6,6 +6,7 @@ const debug = require('debug')('index')
 const scrollToY = require('scrolltoy')
 
 require('highlightjs')
+require('./components/navbar')
 require('./components/hero')
 require('./components/about')
 require('./components/roles')
@@ -61,8 +62,8 @@ class App extends Tonic {
       'Middleware'
     ]
     return this.html`
-    <hero title="${heroTitle}" brandTitle="${brandTitle}" subtitle="${heroSubtitle}" swapList=${JSON.stringify(heroSwapList)}></hero>
-
+    <navbar brandTitle="${brandTitle}"></navbar>
+    <hero title="${heroTitle}" subtitle="${heroSubtitle}" swapList=${JSON.stringify(heroSwapList)}></hero>
     <about></about>
     <roles data=${roles}></roles>
     <demo-interface></demo-interface>

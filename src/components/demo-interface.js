@@ -2,77 +2,80 @@ const Tonic = require('tonic')
 const highlight = require('highlight.js')
 require('highlight.js/styles/default.css')
 
-const code = highlight.highlight('yaml', `
+const code = [
+  {
+    'title': 'Apply Individual Categories',
+    'size': 'is-half',
+    'content': highlight.highlight('yaml', `
 - name: Security Stack
   hosts: someServers
   roles:
     - role: rhel7-stig
-      rhel7stig_cat1: yes`).value
-
-const code1 = highlight.highlight('yaml', `
+      rhel7stig_cat1: yes`
+    ).value
+  },
+  {
+    'title': 'Exclude Rules',
+    'size': 'is-half',
+    'content': highlight.highlight('yaml', `
 - name: Security Stack
   hosts: someServers
   roles:
     - role: rhel7-stig
       exclude:
-        - 'RHEL-07-010020'`).value
-
-const code2 = highlight.highlight('yaml', `
+        - 'RHEL-07-010020'`
+    ).value
+  },
+  {
+    'title': 'Tailored Logic',
+    'size': '',
+    'content': highlight.highlight('yaml', `
 - name: Security Stack
   hosts: someServers
   roles:
     - role: rhel7-stig
       rhel7stig_lftpd_required: yes
-      rhel7stig_firewall_service: iptables`).value
+      rhel7stig_firewall_service: iptables`
+    ).value
+  }
+]
 
 class DemoInterface extends Tonic {
   render () {
     return `
-    <section class='section'>
+    <section id='get-started' class='section'>
       <div class='container'>
         <nav class='level'>
           <span class='level-item'>
             <h1 class='title'>Configurable</h1>
           </span>
         </nav>
-        <div class='columns is-multiline'>
-
-          <div class="column is-half">
-            <div class="box">
-              <nav class='level'>
-                <span class='level-item'>
-                  <h1 class='subtitle'>Apply Individual Categories</h1>
-                </span>
-              </nav>
-              <pre>
-                ${code}
-              </pre>
-            </div>
+        <div class='tile is-ancestor'>
+          <div class="tile is-parent is-6">
+            <article class="tile is-child box">
+             <p class="subtitle has-text-centered">${code[0].title}</p>
+             <pre>
+              ${code[0].content}
+             </pre>
+            </article>
           </div>
-
-          <div class="column is-half">
-            <div class="box">
-              <nav class='level'>
-                <span class='level-item'>
-                  <h1 class='subtitle'>Exclude Rules</h1>
-                </span>
-              </nav>
+          <div class="tile is-parent is-6">
+            <article class="tile is-child box">
+              <p class="subtitle has-text-centered">${code[1].title}</p>
               <pre>
-                ${code1}
+                ${code[1].content}
               </pre>
-            </div>
+            </article>
           </div>
-          <div class="column">
-            <div class="box">
-              <nav class='level'>
-                <span class='level-item'>
-                  <h1 class='subtitle'>Tailored Logic</h1>
-                </span>
-              </nav>
+        </div>
+        <div class="tile is-ancestor">
+          <div class="tile is-parent is-vertical">
+            <article class="tile is-child box">
+              <p class="subtitle has-text-centered">${code[2].title}</p>
               <pre>
-              ${code2}
+                ${code[2].content}
               </pre>
-            </div>
+            </article>
           </div>
         </div>
         <div>

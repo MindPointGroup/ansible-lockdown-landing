@@ -7,7 +7,7 @@ class Roles extends Tonic {
     let repoCards = ''
     for (const role of this.props.data) {
       repoCards += `
-          <div class="column is-one-quarter">
+          <div class="column is-one-third">
             <div class="card">
               <div class="card-content">
                 <div class="content">
@@ -30,7 +30,6 @@ class Roles extends Tonic {
     return `
     <section id='roles' class='has-background-primary section'>
       <div class='container'>
-
         <nav class='level'>
           <span class='level-item'>
             <h1 class='has-text-white title'>Roles</h1>
@@ -46,11 +45,12 @@ class Roles extends Tonic {
         <div class="columns is-multiline">
           ${repoCards}
         </div>
+        <div class="columns"></div>
 
         <h3 class='has-text-centered has-text-white'>
           <strong class='has-text-white'>Need different content?</strong>
           </br>
-          Let Us Know on GitHub, the Mailing List  or for urgent needs contact us to enquire about premium support. 
+          Let Us Know on GitHub, the Mailing List or for urgent needs contact us to inquire about premium support. 
         </h3>
       </div>
     </section>
