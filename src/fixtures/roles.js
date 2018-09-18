@@ -1,16 +1,16 @@
 module.exports = [
   {
-    name: 'RedHat Enterprise Linux 7 STIG',
+    name: 'Red Hat Enterprise Linux 7 STIG',
     repoLink: 'https://github.com/MindPointGroup/RHEL7-STIG',
     tags: ['stig', 'hardening', 'linux', 'rhel']
   },
   {
-    name: 'RedHat Enterprise Linux 7 CIS',
+    name: 'Red Hat Enterprise Linux 7 CIS',
     repoLink: 'https://github.com/MindPointGroup/RHEL7-CIS',
     tags: ['cis', 'hardening', 'linux', 'rhel']
   },
   {
-    name: 'RedHat Enterprise Linux 6 STIG',
+    name: 'Red Hat Enterprise Linux 6 STIG',
     repoLink: 'https://github.com/MindPointGroup/RHEL6-STIG',
     tags: ['stig', 'hardening', 'linux', 'rhel']
   },

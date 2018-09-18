@@ -1,13 +1,24 @@
 @charset 'utf-8';
 
-@import url('https://fonts.googleapis.com/css?family=Cutive+Mono');
-@import url('https://fonts.googleapis.com/css?family=Noto+Sans');
+@import url('https://fonts.googleapis.com/css?family=Orbitron:400,500');
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
 // Set your brand colors
-$dark-grey: #636363;
+$brand-primary: #1f4886;
+$brand-info: #5dbeeb;
+
 // Update Bulma's global variables
-$family-sans-serif: "Nunito", sans-serif;
-$primary: $dark-grey;
-$body-family: "Noto Sans", sans-serif;
+$family-sans-serif: "Lato", sans-serif;
+$primary: $brand-primary;
+$info: $brand-info;
 
 @import "~bulma/bulma";
+
+.title {
+    font-family: 'Orbitron';
+    font-weight: 400;
+}
+
+.title.is-1 {
+    font-weight: 500;
+}
