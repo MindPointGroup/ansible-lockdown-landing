@@ -50,7 +50,7 @@ class Roles extends Tonic {
         <h3 class='has-text-centered has-text-white'>
           <strong class='has-text-white'>Need different content?</strong>
           </br>
-          Let Us Know on GitHub, the Mailing List or for urgent needs contact us to inquire about premium support. 
+          Let Us Know on <a class='has-text-info' href='https://github.com/ansible/ansible-lockdown'>GitHub</a>, the <a class='has-text-info' href='https://groups.google.com/forum/#!forum/ansible-lockdown'>Mailing List</a> or for urgent needs contact <a class='has-text-info' href='https://www.mindpointgroup.com/contact/'>MindPoint Group</a> to inquire about premium support. 
         </h3>
       </div>
     </section>
