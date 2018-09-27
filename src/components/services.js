@@ -21,7 +21,7 @@ class Services extends Tonic {
           The corporate sponsors of this project are dedicated to contributing new roles, enhancements, and other content developed through professional services engagments (where allowable by clients).
           <br>
           <br>
-          Contact information and more details can be found at <a href='https://www.mindpointgroup.com/'>MindPoint Group</a>.
+          Contact information and more details can be found at <a href='https://www.mindpointgroup.com/services/professional-services/'>MindPoint Group</a>.
         </p>
       </div>
     </div>

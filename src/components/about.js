@@ -29,7 +29,7 @@ class About extends Tonic {
                 <br>
                 <p>Speaking in literal terms, it is a curated collection of information security themed Ansible roles that are both vetted and actively maintained.</p>
                 <br>
-                <p>The project is backed by a collaborative effort between <a href='https://www.ansible.com/'>Red Hat® Ansible</a> and <a href='https://www.mindpointgroup.com/'>MindPoint Group</a></p>
+                <p>The project is backed by a collaborative effort between <a href='https://www.ansible.com/'>Red Hat® Ansible</a> and <a href='https://www.mindpointgroup.com/services/professional-services/'>MindPoint Group</a></p>
               </span>
             </div>
             <div>
