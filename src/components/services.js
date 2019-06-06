@@ -1,7 +1,7 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const debug = require('debug')('services')
 
-class Services extends Tonic {
+class AServices extends Tonic {
   render () {
     return this.html`
 <section id='professional-services' class='section'>
@@ -31,5 +31,5 @@ class Services extends Tonic {
   }
 }
 
-Tonic.add(Services)
-module.exports = Services
+Tonic.add(AServices)
+module.exports = AServices

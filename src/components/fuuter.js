@@ -1,7 +1,7 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const debug = require('debug')('footer')
 
-class Fuuter extends Tonic {
+class AFuuter extends Tonic {
   render () {
     debug('render')
     return this.html`
@@ -22,5 +22,5 @@ class Fuuter extends Tonic {
   }
 }
 
-Tonic.add(Fuuter)
-module.exports = Fuuter
+Tonic.add(AFuuter)
+module.exports = AFuuter

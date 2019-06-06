@@ -1,7 +1,7 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const debug = require('debug')('roles')
 
-class Roles extends Tonic {
+class ARoles extends Tonic {
   render () {
     debug(this.props.data)
     let repoCards = ''
@@ -58,5 +58,5 @@ class Roles extends Tonic {
   }
 }
 
-Tonic.add(Roles)
-module.exports = Roles
+Tonic.add(ARoles)
+module.exports = ARoles

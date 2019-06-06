@@ -1,10 +1,10 @@
-const Tonic = require('tonic')
-const domReady = require('domReady')
+const Tonic = require('@conductorlab/tonic')
+const domReady = require('domready')
 const { qs, qsa } = require('qs')
 const roles = require('./fixtures/roles')
 const debug = require('debug')('index')
 const scrollToY = require('scrolltoy')
-
+console.log('here')
 require('highlightjs')
 require('./components/navbar')
 require('./components/hero')
@@ -25,7 +25,7 @@ function scrollFunction () {
   }
 }
 
-class App extends Tonic {
+class AApp extends Tonic {
   stylesheet () {
     return `
     #scrollup {
@@ -62,14 +62,14 @@ class App extends Tonic {
       'Middleware'
     ]
     return this.html`
-    <navbar brandTitle="${brandTitle}"></navbar>
-    <hero title="${heroTitle}" subtitle="${heroSubtitle}" swapList=${JSON.stringify(heroSwapList)}></hero>
-    <about></about>
-    <roles data=${roles}></roles>
+    <a-navbar brandTitle="${brandTitle}"></a-navbar>
+    <a-hero title="${heroTitle}" subtitle="${heroSubtitle}" swapList=${JSON.stringify(heroSwapList)}></a-hero>
+    <a-about></a-about>
+    <a-roles data=${roles}></a=roles>
     <demo-interface></demo-interface>
-    <community></community>
-    <services></services>
-    <fuuter></fuuter>
+    <a-community></a-community>
+    <a-services></a-services>
+    <a-fuuter></a-fuuter>
     <button id="scrollup" class="button"><i class="fas fa-arrow-alt-square-up fa-3x"></i></button>
 `
   }
@@ -91,6 +91,6 @@ const navbarEventInit = () => {
 
 window.onscroll = function () { scrollFunction() }
 domReady(() => {
-  Tonic.add(App)
+  Tonic.add(AApp)
   navbarEventInit()
 })

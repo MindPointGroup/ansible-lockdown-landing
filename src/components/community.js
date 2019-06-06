@@ -1,6 +1,6 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 
-class Community extends Tonic {
+class ACommunity extends Tonic {
   stylesheet () {
     return `
       community .tile .box div {
@@ -85,4 +85,5 @@ class Community extends Tonic {
   }
 }
 
-Tonic.add(Community)
+Tonic.add(ACommunity)
+module.exports = ACommunity

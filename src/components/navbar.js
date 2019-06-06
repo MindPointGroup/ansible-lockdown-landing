@@ -1,8 +1,8 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const debug = require('debug')('navbar')
 const scrollToY = require('scrolltoy')
 
-class Navbar extends Tonic {
+class ANavbar extends Tonic {
   stylesheet () {
     return `
       navbar .navbar-brand {
@@ -72,6 +72,6 @@ class Navbar extends Tonic {
   }
 }
 
-Tonic.add(Navbar)
+Tonic.add(ANavbar)
 
-module.exports = Navbar
+module.exports = ANavbar

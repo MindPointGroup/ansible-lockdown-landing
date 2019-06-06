@@ -1,4 +1,4 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const { qsa } = require('qs')
 const debug = require('debug')('hero')
 const scrollToY = require('scrolltoy')
@@ -57,7 +57,7 @@ window.onload = () => {
   document.body.appendChild(css)
 }
 
-class Hero extends Tonic {
+class AHero extends Tonic {
   getY (el) {
     let yPos = 0
     const headerOffset = document.body.className.includes('has-navbar-fixed-top') ? 50 : 0;
@@ -138,6 +138,6 @@ class Hero extends Tonic {
   }
 }
 
-Tonic.add(Hero)
+Tonic.add(AHero)
 
-module.exports = Hero
+module.exports = AHero

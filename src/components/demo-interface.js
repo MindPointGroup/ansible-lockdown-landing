@@ -1,4 +1,4 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 const highlight = require('highlight.js')
 require('highlight.js/styles/default.css')
 

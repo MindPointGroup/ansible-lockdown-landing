@@ -6,7 +6,6 @@ const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const entry = [
-  'babel-polyfill',
   './src/index.js'
 ]
 
@@ -29,36 +28,9 @@ const plugins = [
   })
 ]
 
-const optimization = {
-  minimizer: [
-    new UglifyJsPlugin({
-      uglifyOptions: {
-        keep_fnames: true
-      },
-      extractComments: true,
-      parallel: true
-    })
-  ]
-}
+const optimization = {}
 
 const rules = [
-  {
-    test: /\.js$/,
-    exclude: /node_modules/,
-    loader: 'babel-loader',
-    query: {
-      presets: [
-        [
-          'env',
-          {
-            exclude: [
-              'transform-es2015-classes'
-            ]
-          }
-        ]
-      ]
-    }
-  },
   {
     test: /\.(scss|css)$/,
     use: [
@@ -102,6 +74,10 @@ module.exports = {
   target: 'web',
   entry,
   output,
+  node: {
+    __dirname: true,
+    fs: 'empty'
+  },
   devtool: (env.NODE_ENV === 'development') ? 'inline-source-map' : false,
   module: {
     rules

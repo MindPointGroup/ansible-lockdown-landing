@@ -1,9 +1,9 @@
-const Tonic = require('tonic')
+const Tonic = require('@conductorlab/tonic')
 
 const ansibleLogo = require('../static/Ansible-Wordmark-RGB-Black.svg')
 const mpgLogo = require('../static/MDP_logo_full_color_no_tag.svg')
 
-class About extends Tonic {
+class AAbout extends Tonic {
   stylesheet () {
     return `
       about hr {
@@ -55,5 +55,5 @@ class About extends Tonic {
   }
 }
 
-Tonic.add(About)
-module.exports = About
+Tonic.add(AAbout)
+module.exports = AAbout
